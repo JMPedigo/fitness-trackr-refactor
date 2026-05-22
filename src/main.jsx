@@ -4,14 +4,11 @@ import { BrowserRouter } from "react-router";
 
 import "./index.css";
 import App from "./App.jsx";
-import Layout from "./layout/Layout";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <Layout>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Layout>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </AuthProvider>,
 );
