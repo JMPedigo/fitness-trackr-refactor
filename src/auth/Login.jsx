@@ -35,7 +35,7 @@ export default function Login() {
         <button>Login</button>
         {error && <p role="alert">{error}</p>}
       </form>
-      {/*<a onClick={() => setPage("register")}>Need an account? Register here.</a>
+      {/*<a onClick={() => setPage("register")}>Need an account? Register here.</a>*/}
     </>
   );
 }
