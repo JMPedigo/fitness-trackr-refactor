@@ -20,7 +20,7 @@ export default function App() {
         {/* */}
         <Route index element={<ActivitiesPage />} />
         {/*if (page === "activities") return <ActivitiesPage />;*/}
-        {/*-----<Route path="/activities" element={<ActivitiesPage />} />*/}
+        <Route path="/activities" element={<ActivitiesPage />} />
         {/* if (page === "register") return <Register />;*/}
         <Route path="/register" element={<Register />} />
         {/*if (page === "login") return <Login />;*/}
