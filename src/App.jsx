@@ -5,6 +5,7 @@ import Register from "./auth/Register";
 import Login from "./auth/Login";
 import ActivitiesPage from "./activities/ActivitiesPage";
 import Error404 from "./Error404.jsx";
+import ActivityDetails from "./activities/ActivityDetails.jsx";
 
 /**
  * Fitness Trackr is a platform where fitness enthusiasts can share their workouts and
@@ -21,6 +22,8 @@ export default function App() {
         <Route index element={<ActivitiesPage />} />
         {/*if (page === "activities") return <ActivitiesPage />;*/}
         <Route path="/activities" element={<ActivitiesPage />} />
+        {/* I need to add a Route path for ActivityDetails */}
+        <Route path="/activities/:id" element={<ActivityDetails />} />
         {/* if (page === "register") return <Register />;*/}
         <Route path="/register" element={<Register />} />
         {/*if (page === "login") return <Login />;*/}
