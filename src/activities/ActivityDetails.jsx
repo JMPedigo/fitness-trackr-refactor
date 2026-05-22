@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { getActivity } from "../api/activities";
 
-/**I need a function to call ActivitiyDetails
+/**I need a function to call ActivityDetails
  * and grab id using useParams
  */
 export default function ActivityDetails() {
