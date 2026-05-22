@@ -17,7 +17,7 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {/*}
+        {/* */}
         <Route index element={<ActivitiesPage />} />
         {/*if (page === "activities") return <ActivitiesPage />;*/}
         <Route path="/activities" element={<ActivitiesPage />} />
