@@ -11,6 +11,18 @@ export async function getActivities() {
     return [];
   }
 }
+/**Fetches a single activity from the API by the activity's id
+ */
+export async function getActivity(id) {
+  try {
+    const response = await fetch(`${API} + "/activities/" + ${id}`, {});
+    const result = await response.json();
+    return result;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
 
 /**
  * Sends a new activity to the API to be created.
