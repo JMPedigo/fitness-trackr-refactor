@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: dimgray;
+  background-color: gray;
 }
 
 form,
@@ -24,7 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
-  color: aqua;
+  color: rgb(0, 0, 0);
 }
 
 header nav {
@@ -33,7 +33,7 @@ header nav {
 }
 
 a {
-  color: rgb(70, 2, 96);
+  color: rgb(3, 3, 3);
   text-decoration: none;
 }
 
@@ -46,6 +46,7 @@ a:hover {
 ul,
 ol {
   padding-left: 1rem;
+  list-style: none;
 }
 
 p[role="alert"] {
