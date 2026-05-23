@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { getActivity, deleteActivity } from "../api/activities";
 import { useAuth } from "../auth/AuthContext";
-import { deleteActivity } from "../api/activities";
 
 /**I need a function to call ActivityDetails
  * and grab id using useParams
@@ -25,7 +24,7 @@ export default function ActivityDetails() {
   const tryDeleteActivity = async () => {
     try {
       await deleteActivity(token, activity.id);
-      syncActivities();
+      navigate("/activities");
     } catch (e) {
       setError(e.message);
     }
