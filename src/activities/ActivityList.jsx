@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { useAuth } from "../auth/AuthContext";
 import { deleteActivity } from "../api/activities";
 
@@ -33,7 +34,7 @@ function ActivityListItem({ activity, syncActivities }) {
   };
   return (
     <li>
-      <p>{activity.name}</p>
+      <Link to={`/activities/${activity.id}`}>{activity.name}</Link>
       {token && <button onClick={tryDeleteActivity}>Delete</button>}
       {error && <p role="alert">{error}</p>}
     </li>

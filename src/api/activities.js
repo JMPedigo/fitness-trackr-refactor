@@ -15,7 +15,7 @@ export async function getActivities() {
  */
 export async function getActivity(id) {
   try {
-    const response = await fetch(`${API}/activities/${id}`, {});
+    const response = await fetch(`${API}/activities/${id}`);
     const result = await response.json();
     return result;
   } catch (e) {

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: gray;
 }
 
 form,
@@ -29,7 +30,7 @@ header nav {
 }
 
 a {
-  color: teal;
+  color: rgb(39, 4, 65);
 }
 
 a:hover {
