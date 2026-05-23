@@ -55,7 +55,7 @@ export async function deleteActivity(token, id) {
 
   const response = await fetch(API + "/activities/" + id, {
     method: "DELETE",
-    headers: { Authorization: "Bearer" + token },
+    headers: { Authorization: "Bearer " + token },
   });
 
   if (!response.ok) {
