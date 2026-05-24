@@ -32,6 +32,7 @@ export default function RoutineDetails() {
     }
   };
 
+  if (!routine) return <p>Loading...</p>;
   /**I need to return an element that provides routine name, creator and description */
   return (
     <article>
