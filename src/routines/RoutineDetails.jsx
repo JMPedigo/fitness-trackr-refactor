@@ -42,6 +42,12 @@ export default function RoutineDetails() {
       {/* I need a button to delete the routine, requires valid token */}
       {token && <button onClick={tryDeleteRoutine}>Delete</button>}
       {error && <p role="alert">{error}</p>}
+
+      {/** I need a list of sets
+       * A delete set button
+       * And an add a set form
+       * */}
+      <SetList />
     </article>
   );
 }
