@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getRoutines } from "../api/routines";
 
 import RoutinesList from "./RoutinesList";
+import RoutineForm from "./RoutineForm";
 
 export default function RoutinesPage() {
   /**I need to create routines and setRoutines*/
@@ -20,6 +21,7 @@ export default function RoutinesPage() {
     <>
       <h1>Routines</h1>
       <RoutinesList routines={routines} syncRoutines={syncRoutines} />
+      <RoutineForm syncRoutines={syncRoutines} />
     </>
   );
 }
