@@ -12,7 +12,7 @@ export default function RoutinesList({ routines }) {
 }
 
 /** I need a routine list item that creates a link to the specified routine */
-function RoutineListItem(routine) {
+function RoutineListItem({ routine }) {
   return (
     <li>
       <Link to={`/routines/${routine.id}`}>{routine.name}</Link>
