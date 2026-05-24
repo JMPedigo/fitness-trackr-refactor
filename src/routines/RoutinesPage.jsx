@@ -18,7 +18,7 @@ export default function RoutinesPage() {
 
   return (
     <>
-      <hi>Routines</hi>
+      <h1>Routines</h1>
       <RoutinesList routines={routines} syncRoutines={syncRoutines} />
     </>
   );
