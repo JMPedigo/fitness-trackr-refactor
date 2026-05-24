@@ -23,3 +23,24 @@ export async function getRoutine(id) {
     return null;
   }
 }
+
+/** Allows a new routine to be created */
+export async function createRoutine(token, routine) {
+  if (!token) {
+    throw Error("You must be signed in to create a routine.");
+  }
+
+  const response = await fetch(API + "/routines", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+    body: JSON.stringify(routine),
+  });
+
+  if (!response.ok) {
+    const result = await response.json();
+    throw Error(result.message);
+  }
+}
