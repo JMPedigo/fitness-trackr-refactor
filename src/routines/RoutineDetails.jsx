@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getRoutines } from "../api/routines";
+import { getRoutine } from "../api/routines";
 
 /**I need a function to call RoutineDetails and grab id using useParams */
 export default function RoutineDetails() {
@@ -10,7 +10,7 @@ export default function RoutineDetails() {
   /**I need to call getRoutine and setRoutine to obtain and change its data */
   useEffect(() => {
     const syncRoutine = async () => {
-      const data = await getRoutines(id);
+      const data = await getRoutine(id);
       setRoutine(data);
     };
     syncRoutine();
@@ -21,7 +21,7 @@ export default function RoutineDetails() {
     <article>
       <h1>{routine?.name}</h1>
       <p>Created by: {routine?.creatorName}</p>
-      <p>{routine?.description}</p>
+      <p>{routine?.goal}</p>
     </article>
   );
 }
