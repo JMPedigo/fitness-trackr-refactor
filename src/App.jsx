@@ -7,6 +7,7 @@ import ActivitiesPage from "./activities/ActivitiesPage";
 import Error404 from "./Error404.jsx";
 import ActivityDetails from "./activities/ActivityDetails.jsx";
 import RoutinesPage from "./routines/RoutinesPage.jsx";
+import RoutineDetails from "./routines/RoutineDetails.jsx";
 
 /**
  * Fitness Trackr is a platform where fitness enthusiasts can share their workouts and
@@ -19,19 +20,21 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {/*I need to set my index element to the ActivitiesPage */}
+        {/* I need to set my index element to the ActivitiesPage */}
         <Route index element={<ActivitiesPage />} />
-        {/*if (page === "activities") return <ActivitiesPage />;*/}
+        {/* if (page === "activities") return <ActivitiesPage />;*/}
         <Route path="/activities" element={<ActivitiesPage />} />
         {/* I need to add a Route path for ActivityDetails */}
         <Route path="/activities/:id" element={<ActivityDetails />} />
-        {/*I need to add a Route path for RoutinesPage*/}
+        {/* I need to add a Route path for RoutinesPage*/}
         <Route path="routines" element={<RoutinesPage />} />
+        {/* I need to add a Route path for RoutineDetails */}
+        <Route path="/routines/:id" element={<RoutineDetails />} />
         {/* if (page === "register") return <Register />;*/}
         <Route path="/register" element={<Register />} />
-        {/*if (page === "login") return <Login />;*/}
+        {/* if (page === "login") return <Login />;*/}
         <Route path="/login" element={<Login />} />
-        {/*return <Error404 />;*/}
+        {/* return <Error404 />;*/}
         <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>
