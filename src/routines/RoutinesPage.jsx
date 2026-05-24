@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getRoutines } from "../api/routines";
-import ActivityList from "../activities/ActivityList";
+
 import RoutinesList from "./RoutinesList";
 
 export default function RoutinesPage() {
