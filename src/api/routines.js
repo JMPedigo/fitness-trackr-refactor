@@ -24,7 +24,9 @@ export async function getRoutine(id) {
   }
 }
 
-/** Allows a new routine to be created */
+/** Allows a new routine to be created
+ * Requires authorization
+ */
 export async function createRoutine(token, routine) {
   if (!token) {
     throw Error("You must be signed in to create a routine.");
