@@ -46,3 +46,22 @@ export async function createRoutine(token, routine) {
     throw Error(result.message);
   }
 }
+
+/** Allows an authorized user to delete their own routine
+ * Requires authorization
+ */
+export async function deleteRoutine(token, id) {
+  if (!token) {
+    throw Error("You must be signed in to delete a routine.");
+  }
+
+  const response = await fetch(API + "/routines/" + id, {
+    method: "DELETE",
+    headers: { Authorization: "Bearer " + token },
+  });
+
+  if (!response.ok) {
+    const result = await response.json();
+    throw Error(result.message);
+  }
+}
