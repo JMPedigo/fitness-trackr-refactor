@@ -20,7 +20,9 @@ export default function RoutineDetails() {
     syncRoutine();
   }, [id]);
 
-  /**I need to request the API to delete a routine */
+  /**I need to request the API to delete a routine
+   * Requires a valid token
+   */
   const tryDeleteRoutine = async () => {
     try {
       await deleteRoutine(token, routine.id);
@@ -36,6 +38,9 @@ export default function RoutineDetails() {
       <h1>{routine?.name}</h1>
       <p>Created by: {routine?.creatorName}</p>
       <p>{routine?.goal}</p>
+      {/* I need a button to delete the routine, requires valid token */}
+      {token && <button onClick={tryDeleteRoutine}>Delete</button>}
+      {error && <p role="alert">{error}</p>}
     </article>
   );
 }
