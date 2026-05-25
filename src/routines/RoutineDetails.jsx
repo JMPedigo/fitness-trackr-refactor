@@ -21,19 +21,19 @@ export default function RoutineDetails() {
   };
   useEffect(() => {
     syncRoutine();
-  }, [id]);
+  });
 
   /**I need to request the API to delete a routine
    * Requires a valid token
    */
-  const tryDeleteRoutine = async () => {
+  async function tryDeleteRoutine() {
     try {
       await deleteRoutine(token, routine.id);
       navigate("/routines");
     } catch (e) {
       setError(e.message);
     }
-  };
+  }
 
   if (!routine) return <p>Loading...</p>;
   /**I need to return an element that provides routine name, creator and description */
