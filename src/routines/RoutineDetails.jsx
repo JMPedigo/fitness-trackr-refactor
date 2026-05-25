@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router";
 import { deleteRoutine, getRoutine } from "../api/routines";
 import { useAuth } from "../auth/AuthContext";
 
+import SetList from "./sets/SetList";
+
 /**I need a function to call RoutineDetails and grab id using useParams */
 export default function RoutineDetails() {
   const { token } = useAuth();
@@ -12,11 +14,12 @@ export default function RoutineDetails() {
   const [error, setError] = useState(null);
 
   /**I need to call getRoutine and setRoutine to obtain and change its data */
+
+  const syncRoutine = async () => {
+    const data = await getRoutine(id);
+    setRoutine(data);
+  };
   useEffect(() => {
-    const syncRoutine = async () => {
-      const data = await getRoutine(id);
-      setRoutine(data);
-    };
     syncRoutine();
   }, [id]);
 
@@ -47,7 +50,7 @@ export default function RoutineDetails() {
        * A delete set button
        * And an add a set form
        * */}
-      <SetList />
+      <SetList sets={routine.sets} syncRoutine={syncRoutine} />
     </article>
   );
 }
