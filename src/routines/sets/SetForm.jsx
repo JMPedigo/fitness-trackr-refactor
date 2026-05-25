@@ -31,5 +31,28 @@ export default function SetForm({ routineId, syncRoutine }) {
       setError(e.message);
     }
   };
-  return <div>SetForm</div>;
+  return (
+    <>
+      <h2>Add a set</h2>
+      <form action={tryCreateSet}>
+        <label>
+          Activity
+          <select name="activity">
+            {activities.map((activity) => (
+              <option key={activity.id} value={activity.id}>
+                {activity.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Rep count
+          <input type="number" name="count" />
+        </label>
+        {/** need a button to add the set */}
+        <button>Add set</button>
+        {error && <p role="alert">{error}</p>}
+      </form>
+    </>
+  );
 }
