@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../auth/AuthContext";
+import { deleteSet } from "../../api/sets";
 
 /** I need a list of sets,
  * with an activity from the activity list,
@@ -33,6 +34,13 @@ function SetListItem({ set, syncRoutine }) {
 
   const tryDeleteSet = async () => {
     setError(null);
+
+    try {
+      await deleteSet(token, set.id);
+      syncRoutine();
+    } catch (e) {
+      setError(e.message);
+    }
   };
   return (
     <li>
