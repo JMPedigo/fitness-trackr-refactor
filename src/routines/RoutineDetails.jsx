@@ -4,6 +4,7 @@ import { deleteRoutine, getRoutine } from "../api/routines";
 import { useAuth } from "../auth/AuthContext";
 
 import SetList from "./sets/SetList";
+import SetForm from "./sets/SetForm";
 
 /**I need a function to call RoutineDetails and grab id using useParams */
 export default function RoutineDetails() {
@@ -51,6 +52,7 @@ export default function RoutineDetails() {
        * And an add a set form
        * */}
       <SetList sets={routine.sets} syncRoutine={syncRoutine} />
+      {token && <SetForm routineId={id} syncRoutine={syncRoutine} />}
     </article>
   );
 }

@@ -45,7 +45,7 @@ function SetListItem({ set, syncRoutine }) {
   return (
     <li>
       <p>
-        {set.name} 🅧 {set.count}
+        {set.name} x {set.count}
       </p>
       {token && <button onClick={tryDeleteSet}>Delete set</button>}
       {error && <p role="alert">{error}</p>}

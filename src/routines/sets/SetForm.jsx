@@ -23,9 +23,9 @@ export default function SetForm({ routineId, syncRoutine }) {
     setError(null);
 
     const activityId = formData.get("activity");
-    const repCount = formData.get("count");
+    const count = formData.get("count");
     try {
-      await createSet(token, { activityId, routineId, repCount });
+      await createSet(token, { activityId, routineId, count });
       syncRoutine();
     } catch (e) {
       setError(e.message);
