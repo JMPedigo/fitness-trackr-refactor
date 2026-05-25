@@ -17,7 +17,7 @@ export default function SetList({ sets, syncRoutine }) {
           ))}
         </ul>
       ) : (
-        <p>This routine doesn't have any sets. Add one?</p>
+        <p>This routine does not have any sets. Add one?</p>
       )}
     </>
   );
